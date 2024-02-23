@@ -15,10 +15,16 @@ return new class extends Migration
     {
         Schema::create('cars', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 150)->nullable();
-            $table->string('brand', 100);
             $table->string('model', 100);
-            $table->decimal('price', 10, 2);
+            $table->string('brand', 100);
+            $table->integer('year')->nullable();
+            $table->string('color', 50)->nullable();
+            $table->decimal('kilometers', 10, 2)->nullable();
+            $table->decimal('price', 10, 2)->nullable();
+            $table->string('transmission', 20)->nullable();
+            $table->string('fuel_type', 20)->nullable();
+            $table->string('engine_size', 20)->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
         });
     }
