@@ -8,7 +8,7 @@
         </li>
         <li>
             <a class="asideMenuLink" href="{{ route('admin.cars.index')}}">
-                <i class="fa-solid fa-folder-tree fa-lg" style="color: #fff;"></i>
+                <i class="fa-solid fa-car" style="color: #FFf;"></i>
                 {{ __('Cars') }}
             </a>
         </li>
