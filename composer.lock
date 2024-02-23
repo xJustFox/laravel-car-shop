@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "aa8a89ebe272dd4df1395a2761b7b5ac",
+    "content-hash": "584459cc357d0b23c13d36d922c72a03",
     "packages": [
         {
             "name": "brick/math",
@@ -6671,7 +6671,7 @@
             ],
             "time": "2023-01-03T12:54:54+00:00"
         },
-        {
+                {
             "name": "phar-io/manifest",
             "version": "2.0.3",
             "source": {
