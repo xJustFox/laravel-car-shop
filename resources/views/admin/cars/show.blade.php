@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
-    <section id="show">
-        <div class="container">
+    <section class="rightMain" id="show">
+        <div class="container pt-3">
             <div class="row">
-                <div class="card m-5">
+                <div class="card">
                     <div class="card-header">
                         <p>Info Macchina</p>
                     </div>
