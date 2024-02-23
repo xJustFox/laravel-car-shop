@@ -16,7 +16,9 @@ class CarController extends Controller
      */
     public function index()
     {
-        return view('admin.cars.index');
+        $cars = Car::orderBy('updated_at', 'desc')->get();
+
+        return view('admin.cars.index', compact('cars'));
     }
 
     /**
