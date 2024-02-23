@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Car;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 
@@ -15,7 +16,7 @@ class CarController extends Controller
      */
     public function index()
     {
-        //
+        return view('admin.cars.index');
     }
 
     /**

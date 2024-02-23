@@ -17,7 +17,7 @@
                     </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    <a href="{{route('admin.cars.index')}}">cars</a>
                 </div>
             </div>
         </div>

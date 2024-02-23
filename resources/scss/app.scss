@@ -1,1 +1,35 @@
-@import '~bootstrap/scss/bootstrap'
+@import '~bootstrap/scss/bootstrap';
+
+
+main {
+    height: calc(100vh - 70px);
+
+    .asideMenu {
+        padding: 20px 0;
+        min-width: 200px;
+        height: 100%;
+        background-color: #161d20;
+
+        li {
+            margin-bottom: 10px;
+
+
+            .asideMenuLink {
+                i {
+                    padding-right: 5px;
+                }
+
+                text-decoration: none;
+                color: #fff;
+                font-size: larger;
+                font-weight: 600;
+                margin-bottom: 20px;
+                margin-left: 30px;
+            }
+        }
+    }
+
+    .rightMain {
+        width: 100%;
+    }
+}
