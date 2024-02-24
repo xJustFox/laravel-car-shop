@@ -47,14 +47,9 @@
                                         <i class="fa-solid fa-pen-to-square fa-xs"></i>
                                     </a>
 
-                                    <form action="{{ route('admin.cars.destroy', $car->slug) }}" method="post" onsubmit="return confirm('Sei sicuro di voler eliminare questo progetto?')">
-                                        @csrf
-                                        @method('DELETE')
-
-                                        <button type="submit" class="btn btn-sm btn-danger">
-                                            <i class="fa-solid fa-trash-can fa-xs"></i>
-                                        </button>
-                                    </form>
+                                    <button class="btn btn-sm btn-danger delete-button" data-bs-toggle="modal" data-bs-target="#modal_car_delete" data-carslug="{{ $car->slug }}">
+                                        <i class="fa-solid fa-trash-can fa-xs"></i>
+                                    </button>
 
                                 </td>
                             </tr>
@@ -63,6 +58,6 @@
                 </table>
             </div>
         </div>
-
     </div>
+    @include('admin.cars.partials.modal_delete')
 @endsection
