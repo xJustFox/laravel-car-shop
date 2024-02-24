@@ -84,6 +84,8 @@ class CarController extends Controller
      */
     public function destroy(Car $car)
     {
-        //
+        $car->delete();
+
+        return redirect()->route('admin.cars.index');
     }
 }
