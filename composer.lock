@@ -6671,7 +6671,60 @@
             ],
             "time": "2023-01-03T12:54:54+00:00"
         },
+        {
+            "name": "pelmered/fake-car",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pelmered/fake-car.git",
+                "reference": "9820b78f4c43a0c6b1db4fc6e9d39829dfbae9a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pelmered/fake-car/zipball/9820b78f4c43a0c6b1db4fc6e9d39829dfbae9a3",
+                "reference": "9820b78f4c43a0c6b1db4fc6e9d39829dfbae9a3",
+                "shasum": ""
+            },
+            "require": {
+                "fakerphp/faker": "^1.10",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "brianium/paratest": "^7.1",
+                "larapack/dd": "^1.1",
+                "phpunit/phpunit": "^10.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Faker\\Provider\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
                 {
+                    "name": "Peter Elmered",
+                    "email": "peter@elmered.com"
+                }
+            ],
+            "description": "Fake-Car is a Faker provider that generates fake car data for you.",
+            "keywords": [
+                "car",
+                "car-faker",
+                "fake-car",
+                "faker",
+                "vehicle"
+            ],
+            "support": {
+                "issues": "https://github.com/pelmered/fake-car/issues",
+                "source": "https://github.com/pelmered/fake-car/tree/2.0.1"
+            },
+            "time": "2024-02-03T00:33:41+00:00"
+        },
+        {
             "name": "phar-io/manifest",
             "version": "2.0.3",
             "source": {
