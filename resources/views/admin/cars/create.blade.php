@@ -21,7 +21,7 @@
         
                                 <div class="col-12 py-2">
                                     <label for="model" class="form-label">Car Model:</label>
-                                    <input name="model" type="text" class="form-control form-control-sm" id="model" placeholder="Insert car model...">
+                                    <input name="model" type="text" class="form-control form-control-sm" id="model" placeholder="Insert car model..." value="{{ old('model') }}">
                                     @error('model')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -29,7 +29,7 @@
         
                                 <div class="col-12 py-2">
                                     <label for="color" class="form-label">Color:</label>
-                                    <input name="color" type="text" class="form-control form-control-sm" id="color" placeholder="Insert color...">
+                                    <input name="color" type="text" class="form-control form-control-sm" id="color" placeholder="Insert color..." value="{{ old('color') }}">
                                     @error('color')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -37,7 +37,7 @@
                                 
                                 <div class="col-12 py-2">
                                     <label for="kilometers" class="form-label">Kilometers</label>
-                                    <input name="kilometers" type="number" class="form-control form-control-sm" id="kilometers" placeholder="Insert kilometers...">
+                                    <input name="kilometers" type="number" class="form-control form-control-sm" id="kilometers" placeholder="Insert kilometers..." value="{{ old('kilometers') }}">
                                     @error('kilometers')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -47,7 +47,7 @@
         
                                 <div class="col-12 py-2">
                                     <label for="brand" class="form-label">Car Brand:</label>
-                                    <input name="brand" type="text" class="form-control form-control-sm" id="brand" placeholder="Insert car brand...">
+                                    <input name="brand" type="text" class="form-control form-control-sm" id="brand" placeholder="Insert car brand..." value="{{ old('brand') }}">
                                     @error('brand')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -55,14 +55,14 @@
         
                                 <div class="col-12 py-2">
                                     <label for="year" class="form-label">Car Year:</label>
-                                    <input class="form-control form-control-sm" type="number" min="1900" max="2099" step="1" name="year" id="year" />
+                                    <input class="form-control form-control-sm" type="number" min="1900" max="2099" step="1" name="year" id="year" value="{{ old('year') }}" />
                                 </div>
         
                                 <div class="col-12 py-2">
                                     <label for="price" class="form-label">Sell Price:</label>
                                     <div class="input-group input-group-sm ">
                                         <span class="input-group-text">€</span>
-                                        <input name="price" type="number" class="form-control form-control-sm" id="price" aria-label="Amount (to the nearest euro)">
+                                        <input name="price" type="number" class="form-control form-control-sm" id="price" aria-label="Amount (to the nearest euro)" value="{{ old('price') }}">
                                         <span class="input-group-text">.00</span>
                                     </div>
                                     @error('price')
@@ -106,7 +106,7 @@
                                 
                                 <div class="col-3">
                                     <label for="engine_size" class="form-label ">Engine Size:</label>
-                                    <input name="engine_size" step=".01" type="number" class="form-control form-control-sm" id="engine_size">
+                                    <input name="engine_size" step=".01" type="number" class="form-control form-control-sm" id="engine_size" value="{{ old('engine_size') }}">
                                     @error('engine_size')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -116,7 +116,7 @@
                             <div class="col-12">
                                 <label for="description" class="form-label">Car description:</label>
                                 <div class="form-floating">
-                                    <textarea name="description" class="form-control form-control-sm" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                                    <textarea name="description" class="form-control form-control-sm" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px">{{ old('description') }}</textarea>
                                     <label for="floatingTextarea2">Add description</label>
                                 </div>
                             </div>
