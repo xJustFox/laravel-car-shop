@@ -24,7 +24,7 @@ return new class extends Migration
             $table->decimal('price', 10, 2)->nullable();
             $table->string('transmission', 20)->nullable();
             $table->string('fuel_type', 20)->nullable();
-            $table->string('engine_size', 20)->nullable();
+            $table->decimal('engine_size', 3,2)->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
         });
