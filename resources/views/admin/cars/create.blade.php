@@ -77,8 +77,8 @@
                                     <div class="input-group mb-3">
                                         <select class="form-select form-select-sm" name="transmission" id="transmission">
                                             <option selected>Choose...</option>
-                                            <option value="Manual">Manual</option>
-                                            <option value="Automatic">Automatic</option>
+                                            <option value="Manual" @selected(old('transmission') == 'Manual')>Manual</option>
+                                            <option value="Automatic" @selected(old('transmission') == 'Automatic')>Automatic</option>
                                         </select>
                                     </div>
                                     @error('transmission')
@@ -91,12 +91,12 @@
                                     <div class="input-group mb-3">
                                         <select class="form-select form-select-sm" name="fuel_type" id="fuel_type">
                                             <option selected>Choose...</option>
-                                            <option value="Gasoline">Gasoline</option>
-                                            <option value="Electric">Electric</option>
-                                            <option value="Diesel">Diesel</option>
-                                            <option value="Hybrid">Hybrid</option>
-                                            <option value="Plugin-hybrid">Plugin-hybrid</option>
-                                            <option value="Natural-gas">Natural-gas</option>
+                                            <option value="Gasoline" @selected(old('fuel_type') == 'Gasoline') >Gasoline</option>
+                                            <option value="Electric" @selected(old('fuel_type') == 'Electric') >Electric</option>
+                                            <option value="Diesel" @selected(old('fuel_type') == 'Diesel') >Diesel</option>
+                                            <option value="Hybrid" @selected(old('fuel_type') == 'Hybrid') >Hybrid</option>
+                                            <option value="Plugin-hybrid" @selected(old('fuel_type') == 'Plugin-hybrid') >Plugin-hybrid</option>
+                                            <option value="Natural-gas" @selected(old('fuel_type') == 'Natural-gas') >Natural-gas</option>
                                         </select>
                                     </div>
                                     @error('fuel_type')
