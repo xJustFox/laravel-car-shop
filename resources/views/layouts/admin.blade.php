@@ -87,7 +87,10 @@
         </nav>
 
         <main class="">
-            @yield('content')
+            <div class="d-flex h-100">
+                @include('partials.aside_menu')
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>
