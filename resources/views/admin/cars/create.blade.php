@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <div class="container">
+    <div class="container overflow-y-scroll">
         <div class="card my-5">
             <div class="card-header">
                 <div class="col-12">
