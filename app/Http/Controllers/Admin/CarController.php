@@ -6,7 +6,7 @@ use App\Models\Car;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
-
+use Illuminate\Support\Str;
 class CarController extends Controller
 {
     /**
@@ -39,7 +39,15 @@ class CarController extends Controller
      */
     public function store(StoreCarRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $car = new Car();
+
+        $car->fill($form_data);
+        $car->slug = Str::slug($car->model. '-');
+        $car->save();
+
+        return redirect()->route('admin.cars.index');
     }
 
     /**
