@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Car;
 use App\Models\Optional;
+use App\Models\Brand;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
@@ -79,7 +80,11 @@ class CarController extends Controller
     {
         $optionals = Optional::all();
         return view('admin.cars.edit', compact('car', 'optionals'));
+
+        $brand = Brand::all();
+        return view('admin.cars.edit', compact('car', 'brand'));
     }
+    
 
     /**
      * Update the specified resource in storage.
