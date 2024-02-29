@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Car;
 use App\Models\Optional;
+use App\Models\Brand;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
@@ -30,9 +31,10 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        $brands = Brand::all();
         $optionals = Optional::all();
-        return view('admin.cars.create', compact('optionals'));
+        return view('admin.cars.create', compact('optionals', 'brands'));
     }
 
     /**

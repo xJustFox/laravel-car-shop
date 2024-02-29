@@ -48,9 +48,16 @@
                                     <div class="col-6">
                 
                                         <div class="col-12 py-2">
-                                            <label for="brand" class="form-label">Car Brand:</label>
-                                            <input name="brand" type="text" class="form-control form-control-sm" id="brand" placeholder="Insert car brand..." value="{{ old('brand') }}">
-                                            @error('brand')
+                                            <label for="brand_id" class="form-label">Car Brand:</label>
+                                            <select name="brand_id" class="form-select @error('brand_id') is-invalid border-danger @enderror" id="brand_id" placeholder="Choose a brand...">
+
+                                                <option value="{{old('brand_id')}}" selected>Select a brand...</option>
+                                                @foreach ($brands as $brand)
+                                                    <option value="{{$brand->id}}">{{$brand->name}}</option>  
+                                                @endforeach
+                
+                                            </select>
+                                            @error('brand_id')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
