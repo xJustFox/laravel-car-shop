@@ -32,8 +32,13 @@
                                 <span>Fuel Type:</span> {{ $car->fuel_type }}
                             </li>
                             <li>
-                                <i class="fa-solid fa-truck-pickup"></i>
-                                <span>Engine Size:</span> {{ $car->engine_size }}
+                                <i class="fa-solid fa-circle-plus"></i>
+                                <span>Optional:</span>
+                                @forelse ($car->optional as $optional)
+                                    {{ $optional->name . ',' }}
+                                @empty
+                                    Nessuno
+                                @endforelse
                             </li>
                         </ul>
                     </section>
