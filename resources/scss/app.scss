@@ -32,4 +32,25 @@ main {
     .rightMain {
         width: 100%;
     }
+
+    #show {
+        ul {
+            li {
+                margin-bottom: 10px;
+
+                i {
+                    font-size: 20px;
+                    padding-right: 10px;
+                    // margin-left: 20px;
+                    color: rgb(27, 107, 182);
+                }
+            }
+        }
+
+        .img-card {
+            height: 300px;
+            width: 500px;
+            box-shadow: 5px 5px 5px 5px grey;
+        }
+    }
 }
