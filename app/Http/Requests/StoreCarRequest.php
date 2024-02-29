@@ -25,7 +25,7 @@ class StoreCarRequest extends FormRequest
     {
         return [
             'model' => 'required|max:100',
-            'brand' => 'required|max:100',
+            'brand_id' => 'required|max:100',
             'year' => 'nullable',
             'color' => 'max:50|nullable',
             'kilometers' => 'nullable',
@@ -41,8 +41,8 @@ class StoreCarRequest extends FormRequest
         return [
             'model.required' => 'The model is required',
             'model.max' => 'The model text can be max 100 characters',
-            'brand.required' => 'The brand is required',
-            'brand.max' => 'The brand text can be max 100 characters',
+            'brand_id.required' => 'The brand is required',
+            'brand_id.max' => 'The brand text can be max 100 characters',
             'color.max' => 'The color text can be max 100 characters',
             'kilometers.decimal' => 'Invalid kilometers',
             'price.decimal' => 'Invalid price',

@@ -49,7 +49,7 @@
                 
                                         <div class="col-12 py-2">
                                             <label for="brand_id" class="form-label">Car Brand:</label>
-                                            <select name="brand_id" class="form-select @error('brand_id') is-invalid border-danger @enderror" id="brand_id" placeholder="Choose a brand...">
+                                            <select name="brand_id" class="form-select form-select-sm  @error('brand_id') is-invalid border-danger @enderror" id="brand_id" placeholder="Choose a brand...">
 
                                                 <option value="{{old('brand_id')}}" selected>Select a brand...</option>
                                                 @foreach ($brands as $brand)
