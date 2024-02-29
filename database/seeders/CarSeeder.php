@@ -26,7 +26,6 @@ class CarSeeder extends Seeder
             Car::create([
                 'model' => $model,
                 'slug' => $slug,
-                'brand' => $faker->vehicleBrand,
                 'year' => $faker->year,
                 'color' => $faker->safeColorName,
                 'kilometers' => $faker->randomFloat(2, 100, 100000),
