@@ -55,6 +55,12 @@ main {
 
     .rightMain {
         width: 100%;
+        overflow-y: auto;
+        padding: 1rem;
+    }
+    
+    .p-1rem{
+        padding: 1rem;
     }
 
 }

@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="rightMain px-3 overflow-y-scroll ">
+    <div class="rightMain">
         <div class="card">
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center ">
