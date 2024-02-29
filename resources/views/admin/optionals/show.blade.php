@@ -12,11 +12,13 @@
                     <div>
                         <a href="{{ route('admin.optionals.edit', $optional->slug) }}" class="btn btn-sm my-btn-color mx-2 ">
                             <i class="fa-solid fa-pen-to-square fa-xs"></i>
+                            Modify
                         </a>
 
                         <button class="btn btn-sm my-btn-color delete-button" data-bs-toggle="modal"
                             data-bs-target="#modal_delete" data-path="optionals" data-slug="{{ $optional->slug }}">
                             <i class="fa-solid fa-trash-can fa-xs"></i>
+                            Delete
                         </button>
                     </div>
                 </div>
@@ -27,13 +29,13 @@
                         <tr>
                             <th scope="col">Name</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Count</th>
+                            <th class="text-center" scope="col">Cars Count</th>
                         </tr>
                     </thead>
                     <tbody>
                         <td>{{ $optional->name }}</td>
                         <td>{{ $optional->price }}€</td>
-                        <td>{{ count($optional->car) }}</td>
+                        <td class="text-center">{{ count($optional->car) }}</td>
                     </tbody>
                 </table>
             </div>

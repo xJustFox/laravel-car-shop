@@ -50,7 +50,7 @@ class BrandController extends Controller
      */
     public function show(Brand $brand)
     {
-        //
+        return view('admin.brands.show', compact('brand'));
     }
 
     /**
@@ -61,8 +61,8 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        $brand = Brand::all();
-        return view('admin.cars.edit', compact('car', 'brand'));
+        
+        return view('admin.brands.edit', compact('brand'));
     }
 
     /**
@@ -85,6 +85,8 @@ class BrandController extends Controller
      */
     public function destroy(Brand $brand)
     {
-        //
+        $brand->delete();
+
+        return redirect()->route('admin.brands.index');
     }
 }

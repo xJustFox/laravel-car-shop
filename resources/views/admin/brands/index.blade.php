@@ -24,7 +24,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Phone number</th>
                             <th scope="col">Car type</th>
-                            <th class="text-center" scope="col">Count</th>
+                            <th class="text-center" scope="col">Cars Count</th>
                             <th class="text-center" scope="col">Tools</th>
                         </tr>
                     </thead>
