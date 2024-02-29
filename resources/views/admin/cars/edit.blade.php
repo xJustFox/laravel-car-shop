@@ -53,7 +53,7 @@
 
                                                 <option value="{{old('brand_id')}}" selected>Select a brand...</option>
                                                 @foreach ($brands as $brand)
-                                                    <option value="{{$brand->id}} @selected($brand->id == old('brand_id', $car->type ? $car->brand->id : ''))">{{$brand->name}}</option>  
+                                                    <option value="{{$brand->id}} @selected($brand->id == old('brand_id', $car->name ? $car->brand->id : ''))">{{$brand->name}}</option>  
                                                 @endforeach
                 
                                             </select>
