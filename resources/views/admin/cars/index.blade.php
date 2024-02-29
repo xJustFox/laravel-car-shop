@@ -34,9 +34,11 @@
                             <tr>
                                 <th scope="row">{{ $car['id'] }}</th>
                                 <td>{{ $car['model'] }}</td>
-                                {{-- inserire brand --}}
-                                <td></td>
+
+                                <td>{{$car->brand ? $car->brand->name : 'non specificato'}}</td>
+                                
                                 <td>{{ $car['year'] }}</td>
+                                <td></td>
                                 <td>{{ Str::limit($car['description'], 50) }}</td>
                                 <td class="d-flex justify-content-center ">
                                     <a href="{{ route('admin.cars.show', ['car' => $car->slug]) }}"
