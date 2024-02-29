@@ -13,7 +13,7 @@
                         <ul class="list-unstyled">
                             <li>
                                 <i class="fa-solid fa-car"></i>
-                                <span>Brand:</span> {{ $car->brand }}
+                                <span>Brand:</span> <td>{{$car->brand ? $car->brand->name : 'non specificata'}}</td>
                             </li>
                             <li>
                                 <i class="fa-solid fa-calendar-days"></i>

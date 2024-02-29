@@ -47,14 +47,28 @@
                                     </div>
                                     <div class="col-6">
                 
+
+
                                         <div class="col-12 py-2">
                                             <label for="brand" class="form-label">Car Brand:</label>
-                                            <input name="brand" type="text" class="form-control form-control-sm" id="brand" placeholder="Insert car brand..." value="{{ $car->brand}}">
+                                            <select name="brand_id" id="brand_id" class="form-select" placeholder="brand_id" required>
+                         
+                                                <option value="">Seleziona la marca</option>
+                                                @foreach($brands as $brand)
+                                                    <option value="{{$brand->id}}" 
+                                                            @selected($brand->id == old("brand_id",$car->brand ? $car->brand->id : ''))>{{$brand->name}}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                           
+
                                             @error('brand')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
                 
+
+
                                         <div class="col-12 py-2">
                                             <label for="year" class="form-label">Car Year:</label>
                                             <input class="form-control form-control-sm" type="number" min="1900" max="2099" step="1" name="year" id="year" value="{{ $car->year}}" />
