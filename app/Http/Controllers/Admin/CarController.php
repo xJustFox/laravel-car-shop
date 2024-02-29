@@ -68,12 +68,10 @@ class CarController extends Controller
      * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Car $car)
     {
-          
-        $car = Car::find($id);
+
         return view('admin.cars.edit', compact('car'));
-    
     }
 
     /**
@@ -83,25 +81,17 @@ class CarController extends Controller
      * @param  \App\Models\Car  $car
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateCarRequest $request, $id)
+    public function update(UpdateCarRequest $request, Car $car)
     {
             $form_data = $request->all();
-            $car = Car::find($id);
-            $car->model = $form_data['model'];
-            $car->slug = $form_data['slug'];
-            $car->brand = $form_data['brand'];
-            $car->year = $form_data['year'];
-            $car->color = $form_data['color'];
-            $car->kilometers = $form_data['kilometers'];
-            $car->price = $form_data['price'];
-            $car->transmission = $form_data['transmission'];
-            $car->fuel_type = $form_data['fuel_type'];
-            $car->engine_size = $form_data['engine_size'];
-            $car->description = $form_data['description'];
+
+            $car->fill($form_data);
+
+            $car->slug = Str::slug($car->model. '-');
     
-            $car-> update();
+            $car-> update($form_data);
     
-            return redirect()->route('admin.cars.index',['car' => $car]);
+            return redirect()->route('admin.cars.index', $car->slug);
     }
 
     /**

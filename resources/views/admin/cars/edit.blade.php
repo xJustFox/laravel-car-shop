@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
-                                <form class="row g-3" action="{{ route('admin.cars.update',$car->id) }}" method="POST">
+                                <form class="row g-3" action="{{ route('admin.cars.update', $car->slug) }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <div class="col-6">
@@ -79,8 +79,8 @@
                                             <div class="input-group mb-3">
                                                 <select class="form-select form-select-sm" name="transmission" id="transmission">
                                                     <option selected>Choose...</option>
-                                                    <option value="Manual" @selected( $car->transmission == 'Manual')>Manual</option>
-                                                    <option value="Automatic" @selected($car->transmission == 'Automatic')>Automatic</option>
+                                                    <option value="Manual" @selected($car->transmission == $car->transmission ? 'Manual' : '')>Manual</option>
+                                                    <option value="Automatic" @selected($car->transmission == $car->transmission ? 'Automatic' : '')>Automatic</option>
                                                 </select>
                                             </div>
                                             @error('transmission')
@@ -93,12 +93,12 @@
                                             <div class="input-group mb-3">
                                                 <select class="form-select form-select-sm" name="fuel_type" id="fuel_type">
                                                     <option selected>Choose...</option>
-                                                    <option value="Gasoline" @selected( $car->fuel_type == 'Gasoline')> Gasoline</option>
-                                                    <option value="Electric" @selected( $car->fuel_type == 'Electric')>Electric</option>
-                                                    <option value="Diesel" @selected( $car->fuel_type == 'Diesel')>Diesel</option>
-                                                    <option value="Hybrid" @selected( $car->fuel_type == 'Hybrid')>Hybrid</option>
-                                                    <option value="Plugin-hybrid" @selected( $car->fuel_type == 'Plugin-hybrid')>Plugin-hybrid</option>
-                                                    <option value="Natural-gas" @selected( $car->fuel_type == 'Natural-gas')>Natural-gas</option>
+                                                    <option value="Gasoline" @selected($car->fuel_type == $car->fuel_type ? 'Gasoline' : '')> Gasoline</option>
+                                                    <option value="Electric" @selected($car->fuel_type == $car->fuel_type ? 'Electric' : '')>Electric</option>
+                                                    <option value="Diesel" @selected($car->fuel_type == $car->fuel_type ? 'Diesel' : '')>Diesel</option>
+                                                    <option value="Hybrid" @selected($car->fuel_type == $car->fuel_type ? 'Hybrid' : '')>Hybrid</option>
+                                                    <option value="Plugin-hybrid" @selected($car->fuel_type == $car->fuel_type ? 'Plugin-hybrid' : '')>Plugin-hybrid</option>
+                                                    <option value="Natural-gas" @selected($car->fuel_type == $car->fuel_type ? 'Natural-gas' : '')>Natural-gas</option>
                                                 </select>
                                             </div>
                                             @error('fuel_type')
