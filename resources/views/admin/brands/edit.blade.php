@@ -3,11 +3,6 @@
 @section('content')
 
     <div class="rightMain">
-    @extends('layouts.admin')
-
-@section('content')
-
-    <div class="rightMain">
     <div class="row justify-content-center">
             <div class="col-10">
                 <div class="card">
@@ -33,19 +28,23 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
-                
-                                            <div class="col-12 py-2">
-                                            <label for="price" class="form-label">brand Price:</label>
-                                            <div class="input-group input-group-sm ">
-                                                <span class="input-group-text">€</span>
-                                                <input name="price" type="number" class="form-control form-control-sm" id="price" aria-label="Amount (to the nearest euro)" 
-                                                value="{{ $brand->price}}">
-                                                <span class="input-group-text">.00</span>
-                                            </div>
-                                            @error('price')
+                                        <div class="col-12 py-2">
+                                            <label for="phone_num" class="form-label">brand phone number:</label>
+                                            <input name="phone_num" type="text" class="form-control form-control-sm" id="phone_num" placeholder="Insert brand phone_num..." 
+                                            value="{{ $brand->phone_num}}">
+                                            @error('phone_num')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
+                                        <div class="col-12 py-2">
+                                            <label for="car_type" class="form-label">brand car_type:</label>
+                                            <input name="car_type" type="text" class="form-control form-control-sm" id="car_type" placeholder="Insert brand car_type..."
+                                             value="{{ $brand->car_type}}">
+                                            @error('car_type')
+                                                <div class="text-danger">{{ $message }}</div>
+                                            @enderror
+                                        </div>
+                
                                     
                                         <div class="col-12 text-center mt-4">
                                         <button type="submit" class="btn btn-sm my-btn-color float-end">Save</button>
@@ -57,9 +56,6 @@
                 </div>        
             </div>
         </div>
-    </div>
-
-@endsection
     </div>
 
 @endsection
