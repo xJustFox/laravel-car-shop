@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100);
             $table->string('slug', 100);
-            $table->string('phone_num', 11);
+            $table->string('phone_num', 20);
             $table->string('car_type', 100);
             $table->timestamps();
         });
