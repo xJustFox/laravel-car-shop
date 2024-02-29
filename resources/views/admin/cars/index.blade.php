@@ -23,7 +23,7 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Model</th>
-                            <th scope="col">Brand</th>
+                            <th class="text-center" scope="col">Brand</th>
                             <th scope="col">Year</th>
                             <th scope="col">Description</th>
                             <th class="text-center" scope="col">Tools</th>
@@ -34,7 +34,9 @@
                             <tr>
                                 <th scope="row">{{ $car['id'] }}</th>
                                 <td>{{ $car['model'] }}</td>
-                                <td>{{$car->brand ? $car->brand->name : 'non specificata'}}</td>
+
+                                <td class="text-center">{{$car->brand ? $car->brand->name : 'non specificato'}}</td>
+                                
                                 <td>{{ $car['year'] }}</td>
                                 <td>{{ Str::limit($car['description'], 50) }}</td>
                                 <td class="d-flex justify-content-center ">

@@ -19,7 +19,13 @@ deletButtons.forEach((button) => {
             case 'cars':
                 text_modal.textContent = 'this car';
                 break;
-        
+            case 'brands':
+                text_modal.textContent = 'this brand';
+                break;
+            case 'optionals':
+                text_modal.textContent = 'this optional';
+                break;
+            
             default:
                 break;
         }

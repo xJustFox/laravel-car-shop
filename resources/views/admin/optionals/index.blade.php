@@ -24,7 +24,7 @@
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Count</th>
+                            <th class="text-center" scope="col">Cars Count</th>
                             <th class="text-center" scope="col">Tools</th>
                         </tr>
                     </thead>
@@ -34,7 +34,7 @@
                                 <th scope="row">{{ $optional['id'] }}</th>
                                 <td>{{ $optional['name'] }}</td>
                                 <td>{{ $optional['price'] }}€</td>
-                                <td>{{ count($optional->car) }}</td>
+                                <td class="text-center">{{ count($optional->car) }}</td>
 
                                 <td class="d-flex justify-content-center ">
                                     <a href="{{ route('admin.optionals.show', ['optional' => $optional->slug]) }}"
