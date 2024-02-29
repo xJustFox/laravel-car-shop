@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Car;
+use App\Models\Optional;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use Illuminate\Support\Str;
+
 class CarController extends Controller
 {
 
@@ -29,7 +31,8 @@ class CarController extends Controller
      */
     public function create()
     {
-        return view('admin.cars.create');
+        $optionals = Optional::all();
+        return view('admin.cars.create', compact('optionals'));
     }
 
     /**
@@ -45,8 +48,12 @@ class CarController extends Controller
         $car = new Car();
 
         $car->fill($form_data);
-        $car->slug = Str::slug($car->model. '-');
+        $car->slug = Str::slug($car->model . '-');
         $car->save();
+
+        if ($request->has('optionals')) {
+            $car->optional()->attach($form_data['optionals']);
+        }
 
         return redirect()->route('admin.cars.index');
     }
@@ -70,8 +77,8 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-
-        return view('admin.cars.edit', compact('car'));
+        $optionals = Optional::all();
+        return view('admin.cars.edit', compact('car', 'optionals'));
     }
 
     /**
@@ -83,13 +90,20 @@ class CarController extends Controller
      */
     public function update(UpdateCarRequest $request, Car $car)
     {
-            $form_data = $request->all();
+        $form_data = $request->all();
 
             $car->fill($form_data);
 
             $car->slug = Str::slug($car->model. '-');
     
             $car-> update($form_data);
+
+            if ($request->has('optionals')) {
+                $car->optional()->sync($form_data['optionals']);
+            }
+            else{
+                $car->optional()->sync([]);
+            }
     
             return redirect()->route('admin.cars.index', $car->slug);
     }
