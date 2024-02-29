@@ -10,7 +10,7 @@ nav{
             color: #c90017 !important;
         }
     }
-
+    
     .drop-item{
         &:hover{
             color: #c90017;
@@ -23,7 +23,14 @@ nav{
 
 main {
     height: calc(100vh - 70px);
-
+    
+    .my-btn-color{
+        color: white;
+        background-color: #c90017;
+        &:hover{
+            background-color: #c90017d8; 
+        }
+    }
     .asideMenu {
         padding: 20px 0;
         min-width: 200px;
@@ -49,6 +56,10 @@ main {
                 font-weight: 600;
                 margin-bottom: 20px;
                 margin-left: 30px;
+
+                &:hover{
+                    color: #c90017; 
+                }
             }
         }
     }

@@ -9,7 +9,7 @@
                         {{ __('My cars') }}
                     </h2>
 
-                    <a class="btn btn-sm btn-primary mx-3" href="{{ route('admin.cars.create') }}">
+                    <a class="btn btn-sm my-btn-color mx-3" href="{{ route('admin.cars.create') }}">
                         <i class="fa-solid fa-car-side px-1"></i>
                         Add car
                     </a>
@@ -21,12 +21,12 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">id</th>
-                            <th scope="col">model</th>
-                            <th scope="col">brand</th>
-                            <th scope="col">year</th>
-                            <th scope="col">description</th>
-                            <th class="text-center" scope="col">command</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Model</th>
+                            <th scope="col">Brand</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">Description</th>
+                            <th class="text-center" scope="col">Tools</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,20 +34,21 @@
                             <tr>
                                 <th scope="row">{{ $car['id'] }}</th>
                                 <td>{{ $car['model'] }}</td>
-                                <td>{{ $car['brand'] }}</td>
+                                {{-- inserire brand --}}
+                                <td></td>
                                 <td>{{ $car['year'] }}</td>
                                 <td>{{ Str::limit($car['description'], 50) }}</td>
                                 <td class="d-flex justify-content-center ">
                                     <a href="{{ route('admin.cars.show', ['car' => $car->slug]) }}"
-                                        class="btn btn-sm btn-primary">
+                                        class="btn btn-sm my-btn-color">
                                         <i class="fa-solid fa-eye fa-xs"></i>
                                     </a>
                                     <a href="{{ route('admin.cars.edit', $car->slug) }}"
-                                        class="btn btn-sm btn-warning mx-2 ">
+                                        class="btn btn-sm my-btn-color mx-2 ">
                                         <i class="fa-solid fa-pen-to-square fa-xs"></i>
                                     </a>
 
-                                    <button class="btn btn-sm btn-danger delete-button" data-bs-toggle="modal" data-bs-target="#modal_delete" data-path="cars" data-slug="{{ $car->slug }}">
+                                    <button class="btn btn-sm my-btn-color delete-button" data-bs-toggle="modal" data-bs-target="#modal_delete" data-path="cars" data-slug="{{ $car->slug }}">
                                         <i class="fa-solid fa-trash-can fa-xs"></i>
                                     </button>
 

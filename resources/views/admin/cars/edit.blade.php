@@ -124,7 +124,7 @@
                                         </div>
                                     </div>
                                     <div class="col-12 text-center mt-4">
-                                        <button type="submit" class="btn btn-primary float-end">Add</button>
+                                        <button type="submit" class="btn btn-sm my-btn-color float-end">Add</button>
                                     </div>
                                 </form>
                             </div>
