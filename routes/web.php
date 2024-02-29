@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\CarController;
+use App\Http\Controllers\Admin\OptionalController;
+use App\Http\Controllers\Admin\BrandController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,6 +28,8 @@ Route::middleware(['auth', 'verified'])
         ->group(function () {
             Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
             Route::resource('/cars', CarController::class)->parameters(['cars' => 'car:slug']);
+            Route::resource('/optionals', OptionalController::class)->parameters(['optionals' => 'optional:slug']);
+            Route::resource('/brands', BrandController::class)->parameters(['brands' => 'brand:slug']);
         });
 
 Route::middleware('auth')->group(function () {

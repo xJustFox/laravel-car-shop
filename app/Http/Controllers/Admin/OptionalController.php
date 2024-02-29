@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StoreOptionalRequest;
 use App\Http\Requests\UpdateOptionalRequest;
+use App\Http\Controllers\Controller;
 use App\Models\Optional;
 
 class OptionalController extends Controller
@@ -15,7 +16,9 @@ class OptionalController extends Controller
      */
     public function index()
     {
-        //
+        $optionals = Optional::all();
+
+        return view('admin.optionals.index', compact('optionals'));
     }
 
     /**
