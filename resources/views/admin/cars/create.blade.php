@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div class="rightMain d-flex justify-content-center ">
-        <div class="row">
+    <div class="rightMain">
+        <div class="row justify-content-center">
             <div class="col-10">
                 <div class="card">
                     <div class="card-header">
@@ -20,7 +20,8 @@
                                     @csrf
                 
                                     <div class="col-6">
-                
+
+                                        {{-- Car Model --}}
                                         <div class="col-12 py-2">
                                             <label for="model" class="form-label">Car Model:</label>
                                             <input name="model" type="text" class="form-control form-control-sm" id="model" placeholder="Insert car model..." value="{{ old('model') }}">
@@ -28,7 +29,8 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
-                
+                                        
+                                        {{-- Color --}}
                                         <div class="col-12 py-2">
                                             <label for="color" class="form-label">Color:</label>
                                             <input name="color" type="text" class="form-control form-control-sm" id="color" placeholder="Insert color..." value="{{ old('color') }}">
@@ -37,6 +39,7 @@
                                             @enderror
                                         </div>
                                         
+                                        {{-- Kilometers --}}
                                         <div class="col-12 py-2">
                                             <label for="kilometers" class="form-label">Kilometers</label>
                                             <input name="kilometers" type="number" class="form-control form-control-sm" id="kilometers" placeholder="Insert kilometers..." value="{{ old('kilometers') }}">
@@ -46,7 +49,8 @@
                                         </div>
                                     </div>
                                     <div class="col-6">
-                
+                                        
+                                        {{-- Car Brand --}}
                                         <div class="col-12 py-2">
                                             <label for="brand" class="form-label">Car Brand:</label>
                                             <input name="brand" type="text" class="form-control form-control-sm" id="brand" placeholder="Insert car brand..." value="{{ old('brand') }}">
@@ -54,12 +58,14 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
-                
+                                        
+                                        {{-- Car Year --}}
                                         <div class="col-12 py-2">
                                             <label for="year" class="form-label">Car Year:</label>
                                             <input class="form-control form-control-sm" type="number" min="1900" max="2099" step="1" name="year" id="year" value="{{ old('year') }}" />
                                         </div>
-                
+                                        
+                                        {{-- Sell Price --}}
                                         <div class="col-12 py-2">
                                             <label for="price" class="form-label">Sell Price:</label>
                                             <div class="input-group input-group-sm ">
@@ -73,7 +79,8 @@
                                         </div>
                                     </div>
                                     <div class="col-12 d-flex">
-                
+                                        
+                                        {{-- Transmission --}}
                                         <div class="col-4">
                                             <label for="transmission" class="form-label">Transmission:</label>
                                             <div class="input-group mb-3">
@@ -87,7 +94,8 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
-                
+                                        
+                                        {{-- Fuel Type --}}
                                         <div class="col-4 px-3">
                                             <label for="fuel_type" class="form-label">Fuel Type:</label>
                                             <div class="input-group mb-3">
@@ -106,6 +114,7 @@
                                             @enderror
                                         </div>
                                         
+                                        {{-- Engine Size --}}
                                         <div class="col-4">
                                             <label for="engine_size" class="form-label ">Engine Size:</label>
                                             <input name="engine_size" step=".01" type="number" class="form-control form-control-sm" id="engine_size" value="{{ old('engine_size') }}">
@@ -113,8 +122,22 @@
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
-                
                                     </div>
+
+                                    {{-- Car Optionals --}}
+                                    <div class="col-12">
+                                        <label class="form-label my-label">Car Optionals</label>
+                                        <div>
+                                            @foreach ($optionals as $optional)
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="optionals[]" id="opt-{{$optional->id}}" value="{{$optional->id}}" @checked(is_array(old(('optionals'))) && in_array($optional->id, old('optionals'))) >
+                                                    <label for="" class="form-check-label">{{$optional->name}}</label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+
+                                    {{-- Car Descrition --}}
                                     <div class="col-12">
                                         <label for="description" class="form-label">Car description:</label>
                                         <div class="form-floating">

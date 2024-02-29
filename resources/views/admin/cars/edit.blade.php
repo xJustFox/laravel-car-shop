@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div class="rightMain d-flex justify-content-center ">
-        <div class="row">
+    <div class="rightMain">
+        <div class="row justify-content-center">
             <div class="col-10">
                 <div class="card">
                     <div class="card-header">
@@ -115,6 +115,19 @@
                                         </div>
                 
                                     </div>
+
+                                    <div class="col-12">
+                                        <label class="form-label my-label">Car Optionals</label>
+                                        <div>
+                                            @foreach ($optionals as $optional)
+                                                <div class="form-check-inline">
+                                                    <input class="form-check-input" type="checkbox" name="optionals[]" id="opt-{{$optional->id}}" value="{{$optional->id}}" {{$car->optional->contains($optional->id) ? 'checked' : ''}}>
+                                                    <label for="" class="form-check-label">{{$optional->name}}</label>
+                                                </div>
+                                            @endforeach
+                                        </div>
+                                    </div>
+
                                     <div class="col-12">
                                         <label for="description" class="form-label">Car description:</label>
                                         <div class="form-floating">
