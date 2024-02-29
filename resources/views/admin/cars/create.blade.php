@@ -58,13 +58,15 @@
                                         {{-- Car Brand --}}
                                         <div class="col-12 py-2">
                                             <label for="brand_id" class="form-label">Car Brand:</label>
-                                            <select name="brand_id" class="form-select form-select-sm  @error('brand_id') is-invalid border-danger @enderror" id="brand_id" placeholder="Choose a brand...">
+                                            <select name="brand_id"
+                                                class="form-select form-select-sm  @error('brand_id') is-invalid border-danger @enderror"
+                                                id="brand_id" placeholder="Choose a brand...">
 
-                                                <option value="{{old('brand_id')}}" selected>Select a brand...</option>
+                                                <option value="{{ old('brand_id') }}" selected>Select a brand...</option>
                                                 @foreach ($brands as $brand)
-                                                    <option value="{{$brand->id}}">{{$brand->name}}</option>  
+                                                    <option value="{{ $brand->id }}">{{ $brand->name }}</option>
                                                 @endforeach
-                
+
                                             </select>
                                             @error('brand_id')
                                                 <div class="text-danger">{{ $message }}</div>
@@ -160,6 +162,13 @@
                                                 </div>
                                             @endforeach
                                         </div>
+                                    </div>
+
+                                    {{-- Car Image --}}
+                                    <div class="col-12">
+                                        <label for="image" class="form-label ">Immagine di copertina</label>
+                                        <input type="file" name="image" id="image" class="form-control"
+                                            value="{{ old('image') }}">
                                     </div>
 
                                     {{-- Car Descrition --}}

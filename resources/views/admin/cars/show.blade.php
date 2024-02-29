@@ -13,7 +13,7 @@
                         <ul class="list-unstyled">
                             <li>
                                 <i class="fa-solid fa-car"></i>
-                                <span>Brand:</span> {{$car->brand ? $car->brand->name : 'non specificato'}}
+                                <span>Brand:</span> {{ $car->brand ? $car->brand->name : 'non specificato' }}
                             </li>
                             <li>
                                 <i class="fa-solid fa-calendar-days"></i>
@@ -70,7 +70,10 @@
                 </div>
                 <div class="col-6 px-5 mt-5 d-flex flex-column justify-content-between">
                     <div class="img-card">
-                        <img src="" alt="...img" class="img-fluid h-100">
+                        @if ($car->image != null)
+                            <img src="{{ asset('/storage/' . $car->image) }}" alt="{{ $car->name }}"
+                                class="img-fluid h-100">
+                        @endif
                     </div>
                     <div class="d-flex justify-content-end px-5">
                         <a href="{{ route('admin.cars.edit', $car->slug) }}" class="btn btn-sm my-btn-color mx-2 ">
