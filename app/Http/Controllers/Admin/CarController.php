@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Storage;
 
 class CarController extends Controller
 {
@@ -46,6 +47,11 @@ class CarController extends Controller
         $form_data = $request->all();
 
         $car = new Car();
+
+        if ($request->hasFile('image')) {
+            $img = Storage::disk('public')->put('cars_images', $form_data['image']);
+            $form_data['image'] = $img;
+        }
 
         $car->fill($form_data);
         $car->slug = Str::slug($car->model . '-');
@@ -92,20 +98,28 @@ class CarController extends Controller
     {
         $form_data = $request->all();
 
-            $car->fill($form_data);
-
-            $car->slug = Str::slug($car->model. '-');
-    
-            $car-> update($form_data);
-
-            if ($request->has('optionals')) {
-                $car->optional()->sync($form_data['optionals']);
+        if ($request->hasFile('image')) {
+            if ($car->image != null) {
+                Storage::delete($car->image);
             }
-            else{
-                $car->optional()->sync([]);
-            }
-    
-            return redirect()->route('admin.cars.index', $car->slug);
+
+            $img = Storage::disk('public')->put('cars_images', $form_data['image']);
+            $form_data['image'] = $img;
+        }
+
+        $car->fill($form_data);
+
+        $car->slug = Str::slug($car->model . '-');
+
+        $car->update($form_data);
+
+        if ($request->has('optionals')) {
+            $car->optional()->sync($form_data['optionals']);
+        } else {
+            $car->optional()->sync([]);
+        }
+
+        return redirect()->route('admin.cars.index', $car->slug);
     }
 
     /**
