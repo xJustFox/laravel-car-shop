@@ -131,7 +131,7 @@
                                             @foreach ($optionals as $optional)
                                                 <div class="form-check-inline">
                                                     <input class="form-check-input" type="checkbox" name="optionals[]" id="opt-{{$optional->id}}" value="{{$optional->id}}" @checked(is_array(old(('optionals'))) && in_array($optional->id, old('optionals'))) >
-                                                    <label for="" class="form-check-label ms-1 badge rounded-pill text-black">{{$optional->name}}</label>
+                                                    <label for="" class="form-check-label">{{$optional->name}}</label>
                                                 </div>
                                             @endforeach
                                         </div>
