@@ -9,7 +9,7 @@
                         {{ __('Brands') }}
                     </h2>
 
-                    <a class="btn btn-sm btn-primary mx-3" href="{{ route('admin.brands.create') }}">
+                    <a class="btn btn-sm my-btn-color mx-3" href="{{ route('admin.brands.create') }}">
                         <i class="fa-solid fa-briefcase px-1"></i>
                         Add brand
                     </a>

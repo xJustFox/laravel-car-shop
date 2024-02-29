@@ -9,7 +9,7 @@
                         {{ __('Optionals') }}
                     </h2>
 
-                    <a class="btn btn-sm btn-primary mx-3" href="{{ route('admin.optionals.create') }}">
+                    <a class="btn btn-sm my-btn-color mx-3" href="{{ route('admin.optionals.create') }}">
                         <i class="fa-solid fa-car-on px-1"></i>
                         Add optional
                     </a>
