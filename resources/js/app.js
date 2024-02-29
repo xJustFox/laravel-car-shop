@@ -10,9 +10,21 @@ const deletButtons = document.querySelectorAll('.delete-button');
 
 deletButtons.forEach((button) => {
     button.addEventListener('click', function(){
-        let car_slug = button.getAttribute('data-carslug');
+        let slug = button.getAttribute('data-slug');
+        let path = button.getAttribute('data-path');
 
-        let url = `${window.location.origin}/admin/cars/${car_slug}`;
+        let text_modal = document.getElementById('custom-message-modal');
+
+        switch (path) {
+            case 'cars':
+                text_modal.textContent = 'this car';
+                break;
+        
+            default:
+                break;
+        }
+
+        let url = `${window.location.origin}/admin/${path}/${slug}`;
 
         let form_delete = document.getElementById('form-delete');
 
