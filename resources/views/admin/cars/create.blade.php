@@ -2,8 +2,8 @@
 
 @section('content')
 
-    <div class="container overflow-y-scroll">
-        <div class="card my-5">
+    <div class="rightMain">
+        <div class="card">
             <div class="card-header">
                 <div class="col-12">
                     <h2 class="fs-4 my-4 px-3 ">

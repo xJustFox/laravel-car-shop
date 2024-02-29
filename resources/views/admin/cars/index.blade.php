@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-    <div class="rightMain px-3 overflow-y-scroll ">
+    <div class="rightMain">
         <div class="card">
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items-center ">
@@ -47,7 +47,7 @@
                                         <i class="fa-solid fa-pen-to-square fa-xs"></i>
                                     </a>
 
-                                    <button class="btn btn-sm btn-danger delete-button" data-bs-toggle="modal" data-bs-target="#modal_car_delete" data-carslug="{{ $car->slug }}">
+                                    <button class="btn btn-sm btn-danger delete-button" data-bs-toggle="modal" data-bs-target="#modal_delete" data-path="cars" data-slug="{{ $car->slug }}">
                                         <i class="fa-solid fa-trash-can fa-xs"></i>
                                     </button>
 
@@ -59,5 +59,5 @@
             </div>
         </div>
     </div>
-    @include('admin.cars.partials.modal_delete')
+    @include('partials.modal_delete')
 @endsection
