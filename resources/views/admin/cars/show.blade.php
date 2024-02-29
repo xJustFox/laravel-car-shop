@@ -69,10 +69,11 @@
                     </div>
                     <div class="d-flex justify-content-end px-5">
                         <a href="{{ route('admin.cars.edit', $car->slug) }}" class="btn btn-sm btn-warning mx-2 ">
-                            <i class="fa-solid fa-pen-to-square fa-xs"> Modifica</i>
+                            <i class="fa-solid fa-pen-to-square fa-xs"></i>
+                            <span>Modifica</span>
                         </a>
                         <button class="btn btn-sm btn-danger delete-button" data-bs-toggle="modal"
-                            data-bs-target="#modal_car_delete" data-carslug="{{ $car->slug }}">
+                            data-bs-target="#modal_delete" data-path="cars" data-slug="{{ $car->slug }}">
                             <i class="fa-solid fa-trash-can fa-xs"></i> Elimina
                         </button>
                     </div>
@@ -80,4 +81,5 @@
             </div>
         </div>
     </section>
+    @include('partials.modal_delete')
 @endsection
