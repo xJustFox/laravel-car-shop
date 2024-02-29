@@ -22,11 +22,11 @@ class BrandSeeder extends Seeder
         $faker->addProvider(new \Faker\Provider\FakeCar($faker));
         
         for ($i=0; $i < 25; $i++) {
-            $model = $faker->vehicleModel;
-            $slug = Str::slug($model);
+            $name = $faker->vehicleBrand;
+            $slug = Str::slug($name);
             
             Brand::create([
-                'name' => $faker->vehicleBrand,
+                'name' => $name,
                 'slug' => $slug,
                 'phone_num' => $faker->phoneNumber,
                 'car_type' => $faker->vehicleType,
