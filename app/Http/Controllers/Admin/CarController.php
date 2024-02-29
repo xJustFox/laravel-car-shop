@@ -78,9 +78,10 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Car $car)
-    {
+    {   
+        $brands = Brand::all();
         $optionals = Optional::all();
-        return view('admin.cars.edit', compact('car', 'optionals'));
+        return view('admin.cars.edit', compact('car', 'optionals', 'brands'));
     }
 
     /**

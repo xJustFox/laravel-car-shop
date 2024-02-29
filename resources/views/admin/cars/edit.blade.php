@@ -48,16 +48,23 @@
                                     <div class="col-6">
                 
                                         <div class="col-12 py-2">
-                                            <label for="brand" class="form-label">Car Brand:</label>
-                                            <input name="brand" type="text" class="form-control form-control-sm" id="brand" placeholder="Insert car brand..." value="{{ $car->brand}}">
-                                            @error('brand')
+                                            <label for="brand_id" class="form-label">Car Brand:</label>
+                                            <select name="brand_id" class="form-select form-select-sm  @error('brand_id') is-invalid border-danger @enderror" id="brand_id" placeholder="Choose a brand...">
+
+                                                <option value="{{old('brand_id')}}" selected>Select a brand...</option>
+                                                @foreach ($brands as $brand)
+                                                    <option value="{{$brand->id}} @selected($brand->id == old('brand_id', $car->type ? $car->brand->id : ''))">{{$brand->name}}</option>  
+                                                @endforeach
+                
+                                            </select>
+                                            @error('brand_id')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
                                         </div>
                 
                                         <div class="col-12 py-2">
                                             <label for="year" class="form-label">Car Year:</label>
-                                            <input class="form-control form-control-sm" type="number" min="1900" max="2099" step="1" name="year" id="year" value="{{ $car->year}}" />
+                                            <input class="form-control form-control-sm" b="number" min="1900" max="2099" step="1" name="year" id="year" value="{{ $car->year}}" />
                                         </div>
                 
                                         <div class="col-12 py-2">
