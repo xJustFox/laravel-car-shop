@@ -61,8 +61,8 @@ class CarController extends Controller
     public function edit($id)
     {
           
-        $car = car::find($id);
-        return view('edit', compact('car'));
+        $car = Car::find($id);
+        return view('admin.cars.edit', compact('car'));
     
     }
 
