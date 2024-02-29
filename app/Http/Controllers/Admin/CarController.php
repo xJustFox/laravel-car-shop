@@ -31,9 +31,10 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        $brands = Brand::all();
         $optionals = Optional::all();
-        return view('admin.cars.create', compact('optionals'));
+        return view('admin.cars.create', compact('optionals', 'brands'));
     }
 
     /**
@@ -77,12 +78,10 @@ class CarController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Car $car)
-    {
+    {   
+        $brands = Brand::all();
         $optionals = Optional::all();
-        return view('admin.cars.edit', compact('car', 'optionals'));
-
-        $brand = Brand::all();
-        return view('admin.cars.edit', compact('car', 'brand'));
+        return view('admin.cars.edit', compact('car', 'optionals', 'brands'));
     }
     
 
