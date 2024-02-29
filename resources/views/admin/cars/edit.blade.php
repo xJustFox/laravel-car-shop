@@ -16,7 +16,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
-                                <form class="row g-3" action="{{ route('admin.cars.update',$car) }}" method="POST">
+                                <form class="row g-3" action="{{ route('admin.cars.update',$car->id) }}" method="POST">
                                     @csrf
                                     @method('PUT')
                                     <div class="col-6">
