@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Car;
-use App\Models\Optional;
 use App\Models\Brand;
+use App\Models\Optional;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCarRequest;
 use App\Http\Requests\UpdateCarRequest;
@@ -87,7 +87,7 @@ class CarController extends Controller
     {   
         $brands = Brand::all();
         $optionals = Optional::all();
-        return view('admin.cars.edit', compact('car', 'optionals', 'brands'));
+        return view('admin.cars.edit', compact('car', 'optionals','brands'));
     }
     
 

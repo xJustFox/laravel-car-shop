@@ -34,9 +34,7 @@
                             <tr>
                                 <th scope="row">{{ $car['id'] }}</th>
                                 <td>{{ $car['model'] }}</td>
-
-                                <td>{{$car->brand ? $car->brand->name : 'non specificato'}}</td>
-                                
+                                <td>{{$car->brand ? $car->brand->name : 'non specificata'}}</td>
                                 <td>{{ $car['year'] }}</td>
                                 <td>{{ Str::limit($car['description'], 50) }}</td>
                                 <td class="d-flex justify-content-center ">
