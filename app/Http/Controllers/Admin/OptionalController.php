@@ -43,12 +43,8 @@ class OptionalController extends Controller
 
         $optional = new Optional();
 
-        $slug = Str::slug($optional->name. '-');
-
-        $form_data['slug'] = $slug;
-
         $optional->fill($form_data);
-
+        $optional->slug = Str::slug($form_data['name']);
         $optional->save();
 
         return redirect()->route('admin.optionals.index');

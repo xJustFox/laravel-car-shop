@@ -37,7 +37,7 @@
                                 <td class="text-center">{{ count($optional->car) }}</td>
 
                                 <td class="d-flex justify-content-center ">
-                                    <a href="{{ route('admin.optionals.show', ['optional' => $optional->slug]) }}"
+                                    <a href="{{ route('admin.optionals.show', $optional->slug) }}"
                                         class="btn btn-sm my-btn-color">
                                         <i class="fa-solid fa-eye fa-xs"></i>
                                     </a>

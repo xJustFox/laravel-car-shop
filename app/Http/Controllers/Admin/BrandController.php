@@ -86,12 +86,9 @@ class BrandController extends Controller
     {
         
         $form_data = $request->all();
-
-        $slug = Str::slug($brand->name . '-');
         
         $brand->fill($form_data);
-        $form_data['slug']= $slug;
-
+        $form_data['slug']= Str::slug($brand->name . '-');
 
         $brand-> update($form_data);
 
