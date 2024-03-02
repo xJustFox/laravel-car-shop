@@ -28,7 +28,7 @@ class OptionalController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.optionals.create');
     }
 
     /**
@@ -39,7 +39,19 @@ class OptionalController extends Controller
      */
     public function store(StoreOptionalRequest $request)
     {
-        //
+        $form_data = $request->all();
+
+        $optional = new Optional();
+
+        $slug = Str::slug($optional->name. '-');
+
+        $form_data['slug'] = $slug;
+
+        $optional->fill($form_data);
+
+        $optional->save();
+
+        return redirect()->route('admin.optionals.index');
     }
 
     /**
