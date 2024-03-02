@@ -6,7 +6,7 @@ use App\Http\Requests\StoreOptionalRequest;
 use App\Http\Requests\UpdateOptionalRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Optional;
-
+use illuminate\Support\Str;
 class OptionalController extends Controller
 {
     /**
@@ -61,7 +61,6 @@ class OptionalController extends Controller
      */
     public function edit(Optional $optional)
     {
-        
         return view('admin.optionals.edit', compact('optional'));
     }
 
@@ -74,7 +73,17 @@ class OptionalController extends Controller
      */
     public function update(UpdateOptionalRequest $request, Optional $optional)
     {
-        //
+        $form_data = $request->all();
+
+        $slug = Str::slug($optional->name . '-');
+        
+        $optional->fill($form_data);
+        $form_data['slug']= $slug;
+
+
+        $optional-> update($form_data);
+
+        return redirect()->route('admin.optionals.index', $optional->slug);
     }
 
     /**

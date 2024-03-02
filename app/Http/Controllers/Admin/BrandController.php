@@ -6,6 +6,7 @@ use App\Http\Requests\StoreBrandRequest;
 use App\Http\Requests\UpdateBrandRequest;
 use App\Http\Controllers\Controller;
 use App\Models\Brand;
+use illuminate\Support\Str;
 
 class BrandController extends Controller
 {
@@ -28,7 +29,7 @@ class BrandController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.brands.create');
     }
 
     /**
@@ -39,7 +40,20 @@ class BrandController extends Controller
      */
     public function store(StoreBrandRequest $request)
     {
-        //
+        
+        $form_data = $request->all();
+
+        $brand = new Brand();
+
+        $slug = Str::slug($brand->name . '-');
+        
+        $form_data['slug']= $slug;
+        
+        $brand->fill($form_data);
+
+        $brand-> save();
+
+        return redirect()->route('admin.brands.index');
     }
 
     /**
@@ -61,8 +75,9 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        
-        return view('admin.brands.edit', compact('brand'));
+        $brand = Brand::all();
+    
+        return view('admin.cars.edit', compact('car', 'brand'));
     }
 
     /**
@@ -74,7 +89,18 @@ class BrandController extends Controller
      */
     public function update(UpdateBrandRequest $request, Brand $brand)
     {
-        //
+        
+        $form_data = $request->all();
+
+        $slug = Str::slug($brand->name . '-');
+        
+        $brand->fill($form_data);
+        $form_data['slug']= $slug;
+
+
+        $brand-> update($form_data);
+
+        return redirect()->route('admin.brands.index', $brand->slug);
     }
 
     /**
