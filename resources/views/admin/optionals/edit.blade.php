@@ -4,7 +4,7 @@
 
     <div class="rightMain">
     <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-4">
                 <div class="card">
                     <div class="card-header">
                         <div class="col-12">
@@ -19,7 +19,7 @@
                                 <form class="row g-3" action="{{ route('admin.optionals.update', $optional->slug) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <div class="col-6">
+                                    <div class="col-12">
                 
                                         <div class="col-12 py-2">
                                             <label for="name" class="form-label">optional name:</label>

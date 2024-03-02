@@ -4,12 +4,12 @@
 
     <div class="rightMain">
     <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-4">
                 <div class="card">
                     <div class="card-header">
                         <div class="col-12">
                             <h2 class="fs-4 my-4 px-3 ">
-                                Add new car
+                                Add new brand
                             </h2>
                         </div>
                     </div>
@@ -19,7 +19,8 @@
                                 <form class="row g-3" action="{{ route('admin.brands.update', $brand->slug) }}" method="POST">
                                     @csrf
                                     @method('PUT')
-                                    <div class="col-6">
+
+                                    <div class="col-12">
                 
                                         <div class="col-12 py-2">
                                             <label for="name" class="form-label">brand name:</label>
