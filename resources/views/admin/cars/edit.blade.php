@@ -9,7 +9,7 @@
                     <div class="card-header">
                         <div class="col-12">
                             <h2 class="fs-4 my-4 px-3 ">
-                                Add new car
+                                Modify car
                             </h2>
                         </div>
                     </div>
