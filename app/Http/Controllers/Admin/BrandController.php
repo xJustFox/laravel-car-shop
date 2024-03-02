@@ -44,13 +44,9 @@ class BrandController extends Controller
         $form_data = $request->all();
 
         $brand = new Brand();
-
-        $slug = Str::slug($brand->name . '-');
-        
-        $form_data['slug']= $slug;
         
         $brand->fill($form_data);
-
+        $brand->slug = Str::slug($form_data['name']);
         $brand-> save();
 
         return redirect()->route('admin.brands.index');
@@ -75,7 +71,7 @@ class BrandController extends Controller
      */
     public function edit(Brand $brand)
     {
-        
+
         return view('admin.brands.edit', compact('brand'));
     }
 

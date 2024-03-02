@@ -23,7 +23,7 @@
                 
                                         <div class="col-12 py-2">
                                             <label for="name" class="form-label">optional name:</label>
-                                            <input name="name" type="text" class="form-control form-control-sm" id="name" placeholder="Insert optional name..." value="{{ $optional->name}}">
+                                            <input name="name" type="text" class="form-control form-control-sm" id="name" placeholder="Insert optional name..." value="{{ $optional->name}}" required>
                                             @error('name')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -34,7 +34,7 @@
                                             <div class="input-group input-group-sm ">
                                                 <span class="input-group-text">€</span>
                                                 <input name="price" type="number" class="form-control form-control-sm" id="price" aria-label="Amount (to the nearest euro)" 
-                                                value="{{ $optional->price}}">
+                                                value="{{ $optional->price}}" required>
                                                 <span class="input-group-text">.00</span>
                                             </div>
                                             @error('price')

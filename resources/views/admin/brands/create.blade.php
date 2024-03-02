@@ -22,7 +22,7 @@
                 
                                         <div class="col-12 py-2">
                                             <label for="name" class="form-label">brand name:</label>
-                                            <input name="name" type="text" class="form-control form-control-sm" id="name" placeholder="Insert brand name..." value="">
+                                            <input name="name" type="text" class="form-control form-control-sm" id="name" placeholder="Insert brand name..." value="{{ old('name') }}"required>
                                             @error('name')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -30,7 +30,7 @@
                                         <div class="col-12 py-2">
                                             <label for="phone_num" class="form-label">brand phone number:</label>
                                             <input name="phone_num" type="text" class="form-control form-control-sm" id="phone_num" placeholder="Insert brand phone num..." 
-                                            value="">
+                                            value="{{ old('phone_num') }}"required>
                                             @error('phone_num')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror
@@ -38,7 +38,7 @@
                                         <div class="col-12 py-2">
                                             <label for="car_type" class="form-label">brand main car type:</label>
                                             <input name="car_type" type="text" class="form-control form-control-sm" id="car_type" placeholder="Insert brand car type..."
-                                             value="">
+                                             value="{{ old('car_type') }}"required>
                                             @error('car_type')
                                                 <div class="text-danger">{{ $message }}</div>
                                             @enderror

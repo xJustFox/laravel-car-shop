@@ -38,7 +38,7 @@
                                 <td class="text-center">{{ count($brand->cars) }}</td>
 
                                 <td class="d-flex justify-content-center ">
-                                    <a href="{{ route('admin.brands.show', ['brand' => $brand->slug]) }}"
+                                    <a href="{{ route('admin.brands.show', $brand->slug) }}"
                                         class="btn btn-sm my-btn-color">
                                         <i class="fa-solid fa-eye fa-xs"></i>
                                     </a>
