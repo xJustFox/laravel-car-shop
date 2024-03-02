@@ -18,7 +18,7 @@
                             <div class="col-12">
                                 <form class="row g-3" action="{{ route('admin.brands.store') }}" method="POST">
                                     @csrf
-                                    <div class="col-6">
+                                    <div class="col-12">
                 
                                         <div class="col-12 py-2">
                                             <label for="name" class="form-label">brand name:</label>
