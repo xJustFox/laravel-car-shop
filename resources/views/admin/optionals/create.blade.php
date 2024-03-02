@@ -4,7 +4,7 @@
 
     <div class="rightMain">
         <div class="row justify-content-center">
-            <div class="col-10">
+            <div class="col-4">
                 <div class="card">
                     <div class="card-header">
                         <div class="col-12">
@@ -35,7 +35,7 @@
                                             <div class="input-group input-group-sm ">
                                                 <span class="input-group-text">€</span>
                                                 <input name="price" type="number" class="form-control form-control-sm" id="price" aria-label="Amount (to the nearest euro)" 
-                                                value="{{ old('price') }}" required>
+                                                value="{{ old('price') }}">
                                                 <span class="input-group-text">.00</span>
                                             </div>
                                             @error('price')
