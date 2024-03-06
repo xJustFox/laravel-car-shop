@@ -13,7 +13,7 @@
                         <ul class="list-unstyled">
                             <li>
                                 <i class="fa-solid fa-car"></i>
-                                <span>Brand:</span> <td>{{$car->brand ? $car->brand->name : 'non specificata'}}</td>
+                                <span>Brand:</span> {{ $car->brand ? $car->brand->name : 'non specificato' }}
                             </li>
                             <li>
                                 <i class="fa-solid fa-calendar-days"></i>
@@ -70,7 +70,15 @@
                 </div>
                 <div class="col-6 px-5 mt-5 d-flex flex-column justify-content-between">
                     <div class="img-card">
-                        <img src="" alt="...img" class="img-fluid h-100">
+                        @if ($car->image != null)
+                            @if (Str::contains($car->img, 'https'))
+                                <img src="{{$car->image}}" alt="{{ $car->name }}" class="img-fluid h-100 w-100">
+                            @else
+                                <img src="{{ asset('/storage/' . $car->image) }}" alt="{{ $car->name }}" class="img-fluid h-100 w-100">
+                            @endif
+                        @else
+                            <img class="img-fluid h-100 w-100" src="https://t4.ftcdn.net/jpg/04/73/25/49/360_F_473254957_bxG9yf4ly7OBO5I0O5KABlN930GwaMQz.jpg" alt="">
+                        @endif
                     </div>
                     <div class="d-flex justify-content-end px-5">
                         <a href="{{ route('admin.cars.edit', $car->slug) }}" class="btn btn-sm my-btn-color mx-2 ">
