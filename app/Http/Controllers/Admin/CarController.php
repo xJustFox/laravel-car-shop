@@ -104,18 +104,19 @@ class CarController extends Controller
 
         if ($request->hasFile('image')) {
             if ($car->image != null) {
-                Storage::delete($car->image);
+                Storage::disk('public')->delete($car->image);
             }
 
             $img = Storage::disk('public')->put('cars_images', $form_data['image']);
             $form_data['image'] = $img;
         }
-
-        $car->fill($form_data);
-
+        
+        // $car->fill($form_data);
+        
         $car->slug = Str::slug($car->model . '-');
-
+        
         $car->update($form_data);
+        dd($car);
 
         if ($request->has('optionals')) {
             $car->optional()->sync($form_data['optionals']);
