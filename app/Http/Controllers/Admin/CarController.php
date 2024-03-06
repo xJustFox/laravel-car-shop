@@ -116,7 +116,6 @@ class CarController extends Controller
         $car->slug = Str::slug($car->model . '-');
         
         $car->update($form_data);
-        dd($car);
 
         if ($request->has('optionals')) {
             $car->optional()->sync($form_data['optionals']);
